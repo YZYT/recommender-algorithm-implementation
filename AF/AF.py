@@ -65,9 +65,11 @@ class AverageFilling:
         Groups.append(np.where((y_user <= 20) * (y_user > 0)))
         Groups.append(np.where((y_user <= 50) * (y_user > 20)))
         Groups.append(np.where((y_user > 50)))
-        self.ratings_grouptest = [np.vstack([records_test[tuple([records_test[:, 0] == user])]
-                                 for user in group[0]]) for group in Groups]
+        # self.ratings_grouptest = [np.vstack([records_test[tuple([records_test[:, 0] == user])]
+        #                          for user in group[0]]) for group in Groups]
 
+        self.ratings_grouptest = [np.vstack([records_test[records_test[:, 0] == user]
+                                             for user in group[0]]) for group in Groups]
 
 
     def performance_on_user_segmentation(self):
