@@ -63,7 +63,7 @@ class CollaborativeFilter:
             # Calculate similarity of items
             self.s_i = np.zeros([m, m])
             for i in range(m):
-                for j in range(m):
+                for j in range(i):
                     users = (R[:, i] != 0) * (R[:, j] != 0)
                     if users.sum() == 0:
                         continue

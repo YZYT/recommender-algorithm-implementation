@@ -15,6 +15,8 @@ class AverageFilling:
         n = len(np.unique(np.sort(records[:, 0])))
         m = len(np.unique(np.sort(records[:, 1])))
 
+        print(n, m)
+
         # Initial R
         R = np.zeros([n, m])
         for record in records_train:
